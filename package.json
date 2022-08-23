@@ -1,0 +1,11 @@
+{
+  "name": "my-task-viewer",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:umzo/my-task-viewer.git",
+  "author": "umzo <umeda2444@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "typescript": "^4.7.4"
+  }
+}

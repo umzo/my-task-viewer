@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+    "noImplicitAny": true,
+    "module": "es6",
+    "target": "es5",
+    "allowJs": true,
+    "moduleResolution": "node",
+    "baseUrl": ".",
+    "paths": {
+      "@controllers/*": ["./controllers/*"],
+      "@gateways/*": ["./gateways/*"],
+      "@presenters/*": ["./presenters/*"],
+      "@domains/*": ["./domains/*"],
+      "@frameworks/*": ["./frameworks/*"],
+      "@hooks/*": ["./frameworks/web/hooks/*"],
+      "@di": ["./di/index.ts"]
+    }
+  },
+  "exclude": [
+    "node_modules",
+    "webpack.config.js"
+  ]
+}

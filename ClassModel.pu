@@ -1,0 +1,85 @@
+@startuml
+namespace domains {
+  namespace entities {
+    ' <<aggredate root>>
+    class Ticket {
+      ticketId: TicketId
+      title: string
+      describe: string
+      status: string
+      parentId: ITicketId
+      schedule: ScheduleID
+    }
+
+    class TickdetId {
+      id: string
+    }
+
+    ' <<aggredate root>>
+    class Schedule {
+      ScheduleID: ScheduleID
+      start: string
+      end: string
+    }
+    class ScheduleID {
+      id: string
+    }
+    Ticket *-- TickdetId
+    Schedule *-- ScheduleID
+    Ticket -- Schedule
+    Ticket <.. ScheduleID
+  }
+
+  namespace useCases {
+    interface TicketSearchUseCase {
+
+    }
+    class TicketSearchInteracter {
+
+    }
+    ' adapters
+    interface TicketGatewayAdapter {
+    }
+    interface TicketPresenterAdapter {
+    }
+
+    ' dto
+    class TicketSearchInputData {
+    }
+    class TicketSearchOutputData {
+    }
+
+    TicketSearchUseCase <|-- TicketSearchInteracter
+    TicketSearchInteracter ..> TicketGatewayAdapter
+    TicketSearchInteracter ..> TicketPresenterAdapter
+    TicketSearchInputData <.. TicketSearchInteracter
+    TicketSearchInteracter ..> TicketSearchOutputData
+
+  }
+  domains.entities.Ticket <.. domains.useCases.TicketGatewayAdapter
+}
+
+namespace controllers {
+  class TicketController {
+  }
+}
+
+namespace presenters {
+  class TicketPresenter {
+  }
+}
+
+domains.useCases.TicketSearchInputData <..  controllers.TicketController
+domains.useCases.TicketSearchUseCase <..  controllers.TicketController
+
+domains.useCases.TicketSearchOutputData <..  presenters.TicketPresenter
+domains.useCases.TicketPresenterAdapter <..  presenters.TicketPresenter
+
+
+
+
+
+
+
+
+@enduml
