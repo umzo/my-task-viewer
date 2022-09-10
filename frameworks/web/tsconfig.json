@@ -18,16 +18,13 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "jsx": "react-jsx",
-    "paths": {
-      "@controllers/*": ["../../controllers/*"],
-      "@gateways/*": ["../../gateways/*"],
-      "@presenters/*": ["../../presenters/*"],
-      "@domains/*": ["../../domains/*"],
-      "@di": ["./di/index.ts"]
-    }
+    "jsx": "react-jsx"
   },
   "include": [
     "src"
-  ]
+  ],
+  "exclude": [
+    "node_modules"
+  ],
+  "extends": "./tsconfig.paths.json"
 }
